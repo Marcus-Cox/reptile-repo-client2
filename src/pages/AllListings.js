@@ -1,5 +1,7 @@
 function AllListingsPage() {
-    return <div>All Listings Page</div>
+    return <div>
+    <h1>Figure This Bullshit out</h1>
+  </div>
 }
 
 export default AllListingsPage;
