@@ -1,5 +1,5 @@
-import Todo from "./components/Todo";
-import { Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { Fragment } from "react";
 
 import AllGuidesPage from "./pages/AllGuides";
 import AllListingsPage from "./pages/AllListings";
@@ -12,30 +12,32 @@ function App() {
   //localhost:3000/pathname / is default
   return (
     <div>
+      
+        <Fragment>
+          <Routes>
+            <Route exact path="/" element={<AllListingsPage />}>
+            </Route>
 
-  <Route path="/">
-    <AllListingsPage />
-  </Route>
+            <Route exact path="/all-guides" element={<AllGuidesPage />}>
+            </Route>
 
-  <Route path="/all-guides">
-    <AllGuidesPage />
-  </Route>
+            <Route exact path="/new-listing" element={<NewListingPage />}>
+              
+            </Route>
 
-  <Route path="/new-listing">
-    <NewListingPage />
-  </Route>
+            <Route exact path="/new-guide" element={<NewGuidePage />}>
+              
+            </Route>
 
-  <Route path="/new-guide">
-    <NewGuidePage />
-  </Route>
+            <Route exact path="favorite-guides" element={<FavoriteGuidesPage />}>
+              
+            </Route>
 
-  <Route path="favorite-guides">
-    <FavoriteGuidesPage />
-  </Route>
-
-  <Route path="favorite-listings">
-    <FavoriteListingsPage />
-  </Route>
+            <Route exact path="favorite-listings" element={<FavoriteListingsPage />}>
+            </Route>
+          </Routes>
+        </Fragment>
+      
     </div>
   );
 }
